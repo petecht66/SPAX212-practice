@@ -63,7 +63,7 @@ player_comparisons$Player[player_comparisons$Rank_plus_minus==1]
 
 # 6. Define an "Underrated Index"
 # High if player looks good individually (PER) but not in plus-minus
-player_comparisons$UnderratedIndex <- player_comparisons$Rank_PM - player_comparisons$Rank_PER
+player_comparisons$UnderratedIndex <- player_comparisons$Rank_plus_minus - player_comparisons$Rank_PER
 
 # 7. Sort player_comparisons frame by Underrated Index from highest to lowest (descending)
 player_comparisons_sorted <- player_comparisons[order(-player_comparisons$UnderratedIndex), ]
