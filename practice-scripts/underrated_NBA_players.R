@@ -50,7 +50,7 @@ player_comparisons$Rank_PER <- rank(-player_comparisons$PER)
 
 # Repeat for Plus_minus
 
-player_comparisons$Rank_plus_minus <- rank(-player_comparisons$PER)
+player_comparisons$Rank_plus_minus <- rank(-player_comparisons$Plus_minus)
 
 
 # Who has the highest PER?
