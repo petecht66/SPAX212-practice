@@ -54,10 +54,7 @@ win_percentage_Mets
 # Please make sure that you have a proper Working Directory set.
 
 # Let's open the file - you can open the file by just running the line of code below. 
-
-install.packages("readxl")
-library(readxl)
-data <- read_excel("Homework 1 Dataset.xlsx")
+data <- read.csv("https://raw.githubusercontent.com/petecht66/SPAX212-practice/refs/heads/main/data/Homework%201%20Dataset.csv")
 
 head(data)
 names(data)
@@ -67,7 +64,7 @@ names(data)
 # 2. Let's create a new column, calculating field goal percentage (FG%), by dividing field goals made (FG) by field 
 # goals attempted (FGA)
 
-data$FG_PCT <- data$FG/data$FGA
+data$FG_PCT <- (data$FG / data$FGA)
 
 
 # 3. Describe the variable using descriptive statistics:
@@ -84,13 +81,20 @@ hist(data$FG_PCT)
 
 # 5. Now - your turn. Write code to create a variable "points per minute" (Points_per_minute) by dividing the number of points 
 # scored (PTS) by the total number of minutes played (MP)
-
+data$points_per_minute <- (data$PTS / data$MP)
 
 
 # 6. Write code to estimate descriptive statistics for points per minute, including: a) mean, b) median, c) max, d) min, e) sd
-
-
+mean(data$points_per_minute)
+median(data$points_per_minute)
+max(data$points_per_minute)
+min(data$points_per_minute)
+sd(data$points_per_minute)
 
 
 # 7. Write code to create a histogram for points per minute
+hist(data$points_per_minute)
 
+# 8. Write the file into Excel
+
+write.csv(data, "Updated Homework 1 Data Set.csv")
