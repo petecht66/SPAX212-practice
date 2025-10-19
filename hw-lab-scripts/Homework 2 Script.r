@@ -63,3 +63,13 @@ data$Luck_diff <- (data$PCT - data$P_Exp)
 ###After completing the code, proceed to Part II in the worksheet
 
 write.csv(data, "Pythagorean Expectation Data.csv")
+
+# Extra credit
+# Making multiple Pythagorean Expectation variables, with different expectations
+data$P_Exp_Squared <- data$RS^2/(data$RS^2 + data$RA^2)
+data$P_Exp_179 <- data$RS^1.79/(data$RS^1.79 + data$RA^1.79)
+
+# Correlations for each of the three formulas, 5 decimal points because they are so close
+round(cor(data$PCT, data$P_Exp, use = "complete.obs"), 5)
+round(cor(data$PCT, data$P_Exp_179, use = "complete.obs"), 5)
+round(cor(data$PCT, data$P_Exp_Squared, use = "complete.obs"), 5)
