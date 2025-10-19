@@ -16,9 +16,11 @@ Orioles_P_Exp
 
 # 2. Now, your turn. 
 #    Estimate Pythagorean Expectation for the New York Yankees, who scored 849 runs and allowed 685 runs
+Yankees_RS <- 849
+Yankees_RA <- 685
 
-
-
+Yankees_P_Exp <- Yankees_RS^1.83/(Yankees_RS^1.83 + Yankees_RA^1.83)
+Yankees_P_Exp
 
 ####################
 # NY Mets Case Study
@@ -59,3 +61,5 @@ data$Luck_diff <- (data$PCT - data$P_Exp)
   
 
 ###After completing the code, proceed to Part II in the worksheet
+
+write.csv(data, "Pythagorean Expectation Data.csv")
